@@ -15,9 +15,12 @@ class Migration(migrations.Migration):
             name='Company',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=50)),
-                ('website', models.URLField(max_length=100)),
-                ('foundation', models.PositiveIntegerField()),
+                ('description', models.CharField(max_length=50)),                   
+                ('marca', models.CharField(max_length=50)),
+                ('serie', models.CharField(max_length=50)),
+                ('precio', models.PositiveIntegerField()),
+                ('cantidad', models.CharField(max_length=50)),
+                ('disponible', models.CharField(max_length=50)),
             ],
         ),
     ]

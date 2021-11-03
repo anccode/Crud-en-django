@@ -14,6 +14,7 @@ class CompanyView(View):
         return super().dispatch(request, *args, **kwargs)
 
     def get(self,request,id=0):
+        #description,marca,serie,precio,cantidad,disponible
         if (id>0):
             companies = list(Company.objects.filter(id=id).values())
             if len(companies) >0:
@@ -44,7 +45,8 @@ class CompanyView(View):
         #print(request.body)
         jd = json.loads(request.body)
         #print(jd)
-        Company.objects.create(name=jd['name'],website=jd['website'],foundation=jd['foundation'])
+        Company.objects.create(description=jd['description'],marca=jd['marca'],serie=jd['serie'],precio=jd['precio'],cantidad=jd['cantidad'],disponible=jd['disponible'])
+            #description,marca,serie,precio,cantidad,disponible
         datos={'message': 'Success'}
         return JsonResponse(datos)
 
@@ -52,10 +54,14 @@ class CompanyView(View):
         jd = json.loads(request.body)
         companies = list(Company.objects.filter(id=id).values())
         if len(companies) >0:
+        #description,marca,serie,precio,cantidad,disponible
             company = Company.objects.get(id=id)
-            company.name=jd['name']
-            company.website=jd['website']
-            company.foundation=jd['foundation']
+            company.description=jd['description']
+            company.marca=jd['marca']
+            company.serie=jd['serie']
+            company.precio=jd['precio']
+            company.cantidad=jd['cantidad']
+            company.disponible=jd['disponible']
             company.save()
             datos = {'message':'Succes'}
         else :

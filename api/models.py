@@ -4,6 +4,11 @@ from django.db import models
 # Create your models here.
 
 class Company(models.Model):
-    name=models.CharField(max_length=50)
-    website=models.URLField(max_length=100)
-    foundation=models.PositiveIntegerField()
+
+    description=models.CharField(max_length=50)
+    marca=models.CharField(max_length=50)
+    serie=models.CharField(max_length=50)
+    precio=models.PositiveIntegerField()
+    cantidad=models.CharField(max_length=50)
+    disponible=models.CharField(max_length=50)
+    #description,marca,serie,precio,cantidad,disponible

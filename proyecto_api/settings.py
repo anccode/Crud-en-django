@@ -79,9 +79,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'HOST':'localhost',#local de la base de daatos direccion ip
         'PORT' : '3306',#puerto
-        'USER': 'user', #el usuario de tu base de datos
-        'PASSWORD': 'pass',#contraseña de base de datos
-        'NAME': 'django_api',#nombre de la base de datos donde quieres guardar
+        'USER': 'root', #el usuario de tu base de datos
+        'PASSWORD': 'root',#contraseña de base de datos
+        'NAME': 'company',#nombre de la base de datos donde quieres guardar
         'OPTIONS':{
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
         }
