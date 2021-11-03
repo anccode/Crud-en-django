@@ -21,11 +21,11 @@ class CompanyView(View):
                 company = companies[0]
                 datos={
                     'message': 'Success',
-                    'company': company
+                    'Product': company
                 }
             else:
                 datos={
-                    'message': 'Companies not found... '
+                    'message': 'Product not found... '
                 }
             return JsonResponse(datos)
         else:
@@ -33,11 +33,11 @@ class CompanyView(View):
             if len(companies) > 0:
                 datos={
                     'message': 'Success',
-                    'companies': companies
+                    'Product': companies
                 }
             else:
                 datos={
-                    'message': 'Companies not found... '
+                    'message': 'Product not found... '
                 }
             return JsonResponse(datos)
 
@@ -65,7 +65,7 @@ class CompanyView(View):
             company.save()
             datos = {'message':'Succes'}
         else :
-            datos = {'message': 'Companies not found... '}
+            datos = {'message': 'Product not found... '}
         return JsonResponse(datos)
 
     def delete(sel,request,id):
@@ -74,5 +74,5 @@ class CompanyView(View):
             Company.objects.filter(id=id).delete()
             datos = {'message':'Succes'}
         else:
-            datos = {'message': 'Companies not found... '}
+            datos = {'message': 'Product not found... '}
         return JsonResponse(datos)
